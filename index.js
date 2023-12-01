@@ -402,6 +402,7 @@ const fetchPosts = async (lastSeenPost) => {
                     dateTime: commentDateTime,
                     author: commentAuthor,
                     content: commentContent,
+                    replies: commentReplies,
                     likes: commentLikes,
                     images: commentImages,
                 });
