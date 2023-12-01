@@ -9,7 +9,7 @@ This repository contains a Node.js script that clones Teknoseyir posts to MongoD
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/Teknoseyir-Clonner.git
+    git clone https://github.com/tuhalf/Teknoseyir-Clonner.git
     ```
 
 2. Install the dependencies:
