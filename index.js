@@ -378,7 +378,7 @@ const fetchPosts = async (lastSeenPost) => {
                         avatar: $(reply).find('.avatar').attr('src')
                     };
                     const replyContent = $(reply).find('.content').text().trim();
-                    const replyLikes = parseInt($(reply).find('.begen_sayi').find('span').text());
+                    const replyLikes = parseInt($(reply).find('.begen_sayi').find('span').text()?$(reply).find('.begen_sayi').find('span').text():"0");
                     const replyImages = [];
                     $(reply).find('.gallery').find('img').each((i, image) => {
                         replyImages.push(
