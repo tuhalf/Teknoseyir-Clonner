@@ -331,9 +331,9 @@ const fetchPosts = async (lastSeenPost) => {
             const id = $(post).attr('id').split('-')[1];
             const dateTime = $(post).find('.stream-top').find('time').attr('datetime');
             const author = {
-                name: $(post).find('.author').text().split('@')[0].trim(),
-                username: $(post).find('.author').text().split('@')[1].trim(),
-                avatar: $(post).find('.avatar').attr('src')
+                name: $(post).find('.author').text().split('@')[0]?$(post).find('.author').text().split('@')[0].trim():'',
+                username: $(post).find('.author').text().split('@')[1]?$(post).find('.author').text().split('@')[1].trim():'',
+                avatar: $(post).find('.avatar').attr('src')?$(post).find('.avatar').attr('src'):''
             };
             const content = $(post).find('.content').text().trim();
             const tags = [];
@@ -356,8 +356,8 @@ const fetchPosts = async (lastSeenPost) => {
                 const commentId = $(comment).attr('id').split('-')[1];
                 const commentDateTime = $(comment).find('.comment-actions').find('a').attr('datetime');
                 const commentAuthor = {
-                    name: $(comment).find('.comment-heading').text().split('@')[0].trim(),
-                    username: $(comment).find('.comment-heading').text().split('@')[1].trim(),
+                    name: $(comment).find('.comment-heading').text().split('@')[0]?$(comment).find('.comment-heading').text().split('@')[0].trim():'',
+                    username: $(comment).find('.comment-heading').text().split('@')[1]?$(comment).find('.comment-heading').text().split('@')[1].trim():'',
                     avatar: $(comment).find('.avatar').attr('src')
                 };
                 const commentContent = $(comment).find('.content').text().trim();
@@ -373,8 +373,8 @@ const fetchPosts = async (lastSeenPost) => {
                     const replyId = $(reply).attr('id').split('-')[1];
                     const replyDateTime = $(reply).find('.comment-actions').find('a').attr('datetime');
                     const replyAuthor = {
-                        name: $(reply).find('.comment-heading').text().split('@')[0].trim(),
-                        username: $(reply).find('.comment-heading').text().split('@')[1].trim(),
+                        name: $(reply).find('.comment-heading').text().split('@')[0]?$(reply).find('.comment-heading').text().split('@')[0].trim():'',
+                        username: $(reply).find('.comment-heading').text().split('@')[1]?$(reply).find('.comment-heading').text().split('@')[1].trim():'',
                         avatar: $(reply).find('.avatar').attr('src')
                     };
                     const replyContent = $(reply).find('.content').text().trim();
